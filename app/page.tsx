@@ -103,10 +103,10 @@ export default function LandingPage() {
   const router = useRouter()
   const isMobile = useResponsive('down', 'sm')
 
-  useEffect(() => {
-    router.prefetch(PATH_PUBLIC)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  //useEffect(() => {
+  //  router.prefetch(PATH_PUBLIC)
+  //  // eslint-disable-next-line react-hooks/exhaustive-deps
+  //}, [])
 
   return (
     <>
@@ -114,11 +114,6 @@ export default function LandingPage() {
         title="蝦皮直播外掛"
         description="協助蝦皮直播主銷售外掛工具"
       />
-      <MainLayout>
-        <RootContainer>
-        </RootContainer>
-        <Gap />
-      </MainLayout>
     </>
   )
 }

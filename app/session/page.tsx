@@ -97,8 +97,8 @@ const SessionListPage = () => {
             height: isMobile ? 28 : 48,
             borderRadius: 100,
             boxShadow: 'none',
+            mr: 1,
           }}
-          sx={{ mr: 1, color: 'text.primary' }}
           onClick={() => sessionCreateDialogVar({ isDialogOpen: true })}
         >
           <Icon icon={addSolid} />
