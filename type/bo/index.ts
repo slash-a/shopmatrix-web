@@ -4,7 +4,7 @@ export type SessionInfo = {
   created_at: number
   updated_at: number
   session_id: string
-  titel: string
+  title: string
   status: number
   chatroom_id: string
   start_time: number

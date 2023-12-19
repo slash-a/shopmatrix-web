@@ -1,11 +1,9 @@
 import { Card, Grid, Skeleton, CardMedia, CardContent, Typography} from '@mui/material'
-import find from 'lodash/find'
 import styled from 'styled-components'
 
-import sessionInfo from '@/type/bo/sessionInfo'
+import { SessionInfo } from '@/type/bo'
 import MCircularProgress from '@/component/@material-extend/MCircularProgress'
 import palette from '@/theme/palette'
-import { YIELD_RECORDS_PAGINATION_LIMIT } from '@/constants'
 
 const defaultImg = 'https://www.gstatic.com/meet/meet_google_one_carousel_promo_icon_0f14bf8fc61484b019827c071ed8111d.svg';
 
@@ -31,7 +29,7 @@ const SessionItem = ({
   sessionInfo,
   onCardClick,
 }:{
-  sessionInfo: sessionInfo 
+  sessionInfo: SessionInfo 
   onCardClick?: () => void
 }) => {
 
@@ -55,7 +53,7 @@ const SessionItem = ({
         <CardMediaWrapper
           component="img"
           loading="lazy"
-          src={sessionInfo?.link ?? defaultImg}
+          src={defaultImg}
           sx={{
             aspectRatio: "1",
             objectFit: "contain",
@@ -88,7 +86,7 @@ const SessionItem = ({
               fontFamily: "Noto Sans TC, sans-serif",
             }}
           >
-            {sessionInfo?.description ?? ''}
+            {sessionInfo?.status==1? '開始': '結束'}
           </Typography>
           <Typography
             variant="body1"

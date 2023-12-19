@@ -78,7 +78,7 @@ export default function MainFooter() {
               width={200}
               height={200}
               style={{ margin: 0, maxWidth: '100%', objectFit: 'contain' }}
-              objectFi="contain"
+              objectFit="contain"
             />
           </LogoContainer>
         <Typography variant="body1" color="#000">

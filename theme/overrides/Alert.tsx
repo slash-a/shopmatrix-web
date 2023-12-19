@@ -7,7 +7,7 @@ import { Icon } from '@iconify/react'
 import { Theme } from '@mui/material/styles'
 
 // @types
-import { ColorSchema } from '../../@types/theme'
+import { ColorSchema } from '../../type/theme'
 
 // ----------------------------------------------------------------------
 

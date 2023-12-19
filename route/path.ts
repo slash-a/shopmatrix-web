@@ -2,8 +2,7 @@ function path(root: string, sublink: string) {
   return `${root}${sublink}`
 }
 
-const ROOTS = ''
-const ROOTS_ADMIN = '/admin'
+const ROOTS = '/'
 
 export const PATH_PUBLIC = {
   root: ROOTS,

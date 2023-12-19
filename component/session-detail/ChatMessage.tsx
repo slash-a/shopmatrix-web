@@ -2,13 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { useTheme } from '@mui/material/styles'
 import { layout } from '@/theme/style'
-import ChatMessage from "@/type/ChatMessage";
+import Container from '@mui/material/Container'
+import { ChatMessage } from "@/type/bo";
 import { Grid, useMediaQuery } from '@mui/material'
 
 const Message = styled.div`
-  width: ${(props) => props.width || '100%'};
   position: relative;
-  /* 其他样式保持不变 */
 `;
 
 const Sender = styled.div`
@@ -38,21 +37,23 @@ const ChatMessage = (props: ChatMessage) => {
   const messageWidth = isMobile ? '100%' : '768px'; 
   
   return (
-    <Message
-      width={messageWidth}
+    <Container
+      maxWidth="lg"
     >
-      <Grid container style={{ padding: `3px` }}>
-        <Grid item xl={1} lg={1} xs={1}>
-          <Sender>{props.username}</Sender>
+      <Message>
+        <Grid container style={{ padding: `3px` }}>
+          <Grid item xl={1} lg={1} xs={1}>
+            <Sender>{props.username}</Sender>
+          </Grid>
+          <Grid item xl={9} lg={9} xs={9}>
+            <Content>
+              {props.message}
+            </Content>
+          </Grid>
         </Grid>
-        <Grid item xl={9} lg={9} xs={9}>
-          <Content>
-            {props.message}
-          </Content>
-        </Grid>
-      </Grid>
-      <Timestamp>{props.time}</Timestamp>
-    </Message>
+        <Timestamp>{props.time}</Timestamp>
+      </Message>
+    </Container>
   );
 }
 

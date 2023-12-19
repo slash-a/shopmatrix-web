@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { SettingsContext } from '../context/SettingContext';
+import { SettingContext } from '../context/SettingContext';
 
 // ----------------------------------------------------------------------
 

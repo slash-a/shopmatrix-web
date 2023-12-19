@@ -6,7 +6,6 @@ import NextLink from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import styled from 'styled-components'
 
-import Logo from '@/components/Logo'
 import useOffSetTop from '@/hook/useOffSetTop'
 import { PATH_PUBLIC } from '@/route/path'
 import { layout } from '@/theme/style'

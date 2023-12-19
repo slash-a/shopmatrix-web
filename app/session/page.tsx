@@ -10,7 +10,6 @@ import { PATH_PUBLIC } from '@/route/path'
 import styled from 'styled-components'
 import { sessionCreateDialogVar } from '@/apollo/localState'
 
-import Page from '@/component/Page'
 import StrategyLayout from '@/layout/main'
 import { layout } from '@/theme/style'
 import SessionItem from '@/component/session/SessionItem'

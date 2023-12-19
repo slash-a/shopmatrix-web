@@ -15,7 +15,7 @@ import { useState } from 'react'
 import { useFormik } from 'formik';
 import styled from 'styled-components'
 import * as yup from 'yup'
-import SessionInfo from "@/type/SessionInfo";
+import { SessionInfo } from "@/type/bo";
 
 import { sessionCreateDialogVar } from '@/apollo/localState'
 import palette from '@/theme/palette'
@@ -48,7 +48,7 @@ const Gap = styled.div`
   }
 `
 
-const SessionCreateDialog = ({ onClose }) => {
+const SessionCreateDialog = ({ onClose }: any) => {
   const { enqueueSnackbar } = useSnackbar()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
@@ -56,12 +56,12 @@ const SessionCreateDialog = ({ onClose }) => {
   //const [sessionInfo, setSessionInfo] = useState<SessionInfo | null>(
   //  null
   //)
-  const { isDialogOpen, sessionInfo, callback } =
+  const { isDialogOpen } =
     useReactiveVar(sessionCreateDialogVar)
 
   const validationSchema = yup.object({
     sessionLink: yup
-      .string('請輸入直播連結')
+      .string()
       .url('請輸入正確的網址')
       .required('直播連結為必填'),
   });
@@ -81,7 +81,6 @@ const SessionCreateDialog = ({ onClose }) => {
       })
     }).then((res) =>{
       setIsComplete(true);
-      callback && callback();
       formik.resetForm();
     }).catch((err) => {
       console.error('Error during session creation:', err);
@@ -99,7 +98,6 @@ const SessionCreateDialog = ({ onClose }) => {
   const handleCloseDialog = () => {
     sessionCreateDialogVar({
       isDialogOpen: false,
-      callback: () => {},
     })
     setIsComplete(false)
     onClose && onClose()
@@ -130,7 +128,6 @@ const SessionCreateDialog = ({ onClose }) => {
             <Grid
               container
               item
-              fullWidth
               xs={12}
               md={6}
               justifyContent={'flex-end'}

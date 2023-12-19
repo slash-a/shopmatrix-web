@@ -118,13 +118,13 @@ const initialState: SettingsContextProps = {
   colorOption: [],
 }
 
-const SettingsContext = createContext(initialState)
+const SettingContext = createContext(initialState)
 
-type SettingsProviderProps = {
+type SettingProviderProp = {
   children: ReactNode
 }
 
-function SettingsProvider({ children }: SettingsProviderProps) {
+function SettingProvider({ children }: SettingProviderProp) {
   const settings = {
     themeMode: getItem(KEY_THEME_MODE) ?? 'light',
     themeDirection: getItem(KEY_THEME_DIRECTION) ?? 'ltr',
@@ -153,7 +153,7 @@ function SettingsProvider({ children }: SettingsProviderProps) {
   }
 
   return (
-    <SettingsContext.Provider
+    <SettingContext.Provider
       value={{
         ...settings,
         // Mode
@@ -170,8 +170,8 @@ function SettingsProvider({ children }: SettingsProviderProps) {
       }}
     >
       {children}
-    </SettingsContext.Provider>
+    </SettingContext.Provider>
   )
 }
 
-export { SettingsContext,SettingsProvider }
+export { SettingContext,SettingProvider }

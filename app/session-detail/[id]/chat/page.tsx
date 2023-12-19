@@ -73,6 +73,7 @@ const SessionDetailPage = ({ params: { id } }: { params: { id: number } }) => {
           chats.map((chatMsg: any) => {
             return (
               <ChatMessage
+                id={chatMsg.id}
                 key={chatMsg.id}   
                 username={`${chatMsg.username}:`}
                 message={chatMsg.message}
